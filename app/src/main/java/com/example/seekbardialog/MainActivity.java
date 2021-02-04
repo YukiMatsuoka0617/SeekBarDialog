@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity
         implements View.OnClickListener , SeekBar.OnSeekBarChangeListener {
     Button button;
@@ -20,6 +23,10 @@ public class MainActivity extends AppCompatActivity
     SeekBar seekBar;
     int value = 0;
     int progress;
+
+    final String[] items = {"default", "slow", "user custom"};
+    int defaultItem = 0; // デフォルトでチェックされているアイテム
+    final List<Integer> checkedItems = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +45,27 @@ public class MainActivity extends AppCompatActivity
     }
 
     void launchDialog(){
+        new AlertDialog.Builder(this)
+                .setTitle("Selector")
+                .setSingleChoiceItems(items, defaultItem, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        checkedItems.clear();
+                        checkedItems.add(which);
+                        defaultItem = which;
+                        SeekbarDialog();
+                    }
+                })
+                .show();
+    }
+
+    void SeekbarDialog(){
         LayoutInflater inflater = (LayoutInflater)this.getSystemService(LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.dialog, (ViewGroup) findViewById(R.id.layout));
 
         seekBar = layout.findViewById(R.id.seekBar);
         seekBar.setProgress(progress);
         seekBar.setOnSeekBarChangeListener(this);
-
         new AlertDialog.Builder(this)
                 .setTitle("title")
                 .setMessage("message")
@@ -64,6 +85,7 @@ public class MainActivity extends AppCompatActivity
                     }
                 })
                 .show();
+
     }
 
     @Override
