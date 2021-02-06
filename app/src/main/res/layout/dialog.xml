@@ -11,20 +11,12 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="200" />
-
-        <TextView
             android:id="@+id/textView02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="250" />
+            android:text="fast" />
 
         <TextView
             android:id="@+id/textView03"
@@ -32,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="300" />
+            android:text="default" />
 
         <TextView
             android:id="@+id/textView04"
@@ -40,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="350" />
+            android:text="250" />
 
         <TextView
             android:id="@+id/textView05"
@@ -48,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="400" />
+            android:text="300" />
 
         <TextView
             android:id="@+id/textView06"
@@ -56,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="450" />
+            android:text="350" />
 
         <TextView
             android:id="@+id/textView07"
@@ -64,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="500" />
+            android:text="slow" />
 
         <TextView
             android:id="@+id/textView08"
@@ -72,21 +64,23 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="550" />
+            android:text="450" />
         <TextView
             android:id="@+id/textView09"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="600" />
+            android:text="sloer" />
     </LinearLayout>
     <SeekBar
         android:id="@+id/seekBar"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="8"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:max="7"
         android:progress="0" />
 
 </LinearLayout>

@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-        value = i*50 + 200;
+        value = i*50 + 150;
         progress = i;
         Log.d("TAG", "onProgressChanged: "+ i);
     }
